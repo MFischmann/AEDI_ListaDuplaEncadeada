@@ -122,7 +122,6 @@ public class DoubleLinkedListOfInteger {
      */
     public void add(int index, Integer element) {
         // Implemente este método
-        //TODO
         if(index > count || index < 0){
             throw new IndexOutOfBoundsException("Indice nao valido");
         }
