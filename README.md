@@ -4,7 +4,7 @@ Exercícios de ListaDuplaEncadeada, disciplina Algoritmos e Estruturas de Dados 
 **Enunciado:**\
 **PUCRS – Algoritmos e Estruturas de Dados I**\
 **Exercícios de Lista Duplamente Encadeada**\
-**Professora Isabel Harb Manssour**\
+**Professora Isabel Harb Manssour**
 1. Apresente um algoritmo para o método “**void add (int index, int element)**” da classe
 _DoubleLinkedListOfInteger_, sabendo que ele deve inserir “*element*” na lista na posição indicada por
 “*index*”. Lembre que o *index* deve ser válido, os atributos devem ser atualizados sempre que
