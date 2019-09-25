@@ -123,6 +123,20 @@ public class DoubleLinkedListOfInteger {
     public void add(int index, Integer element) {
         // Implemente este método
         //TODO
+        if(index > count || index < 0){
+            throw new IndexOutOfBoundsException("Indice nao valido");
+        }
+        Node aux = header.next;
+        Node n = new Node(element);
+        for(int i = 0; i < index; i++){
+            aux = aux.next;
+        }
+        
+        n.next = aux;
+        n.prev = aux.prev;
+        aux.prev.next = n;
+        aux.prev = n;
+        count++;
     }
     
     /**

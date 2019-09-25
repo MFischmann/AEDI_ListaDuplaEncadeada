@@ -67,5 +67,18 @@ public class App {
         System.out.println("Remove elemento 32: "+lista.remove(32));
         System.out.println("Remove elemento 17: "+lista.remove(17));
         System.out.println(lista);
+    
+        System.out.println("Adiciona elemento 22 na posicao 2");
+        lista.add(2, 22);
+        System.out.println(lista);
+        System.out.println(lista.size());
+        System.out.println("Adiciona elemento 30 na posicao 0");
+        lista.add(0, 30);
+        System.out.println(lista);
+        System.out.println(lista.size());
+        System.out.println("Adiciona elemento 81 na proxima posicao");
+        lista.add(lista.size(), 81);
+        System.out.println(lista);
+        System.out.println(lista.size());
     }
 }
