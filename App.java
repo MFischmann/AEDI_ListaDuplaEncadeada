@@ -45,7 +45,7 @@ public class App {
         System.out.println("Conteudo da lista:\n"+lista);
         lista.reverse();
         System.out.println("Conteudo da lista invertida:\n"+lista);
-        lista.reverse();
+        lista.reverse(); //retorna lista ordem original
 
         System.out.println("Metodo toString():\n"+ lista.toString());
         System.out.println("Metodo toStringBackToFront():\n"+ lista.toStringBackToFront());
@@ -56,5 +56,11 @@ public class App {
         lista.unique();
         System.out.println("Lista apos metodo unique:\n" + lista);
         System.out.println("Tamanho da lista apos metodo unique: " + lista.size());
+
+        System.out.println("Substitui elemento posicao 0 por 12. Elemento original: " + lista.set(0, 12));
+        System.out.println("Substitui elemento posicao 0 por 9. Elemento original: " + lista.set(0, 9));
+        System.out.println("Substitui elemento posicao 7 por 98. Elemento original: " + lista.set(7, 98));
+        System.out.println("Substitui elemento posicao 4 por 3. Elemento original: " + lista.set(4, 3));
+        System.out.println("Lista apos utilizar metodo set: \n" + lista);
     }
 }

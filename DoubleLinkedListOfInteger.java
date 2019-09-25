@@ -145,8 +145,13 @@ public class DoubleLinkedListOfInteger {
     */
     public Integer set(int index, Integer element) {
         // Implemente este método
-        //TODO
-        return 0;
+        if(index >= count || index < 0){
+            throw new IndexOutOfBoundsException("Indice nao valido");
+        }
+        Node aux = getRefNode(index); //ja usa busca otimizada
+        int substituido = aux.element;
+        aux.element = element; //substitui elemento
+        return substituido;
     }
     //Retorna lista de tras para frente
     public String toStringBackToFront(){ //Caracterizacao O(n)
