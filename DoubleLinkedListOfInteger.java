@@ -131,8 +131,16 @@ public class DoubleLinkedListOfInteger {
      * @return true se a lista contem o elemento especificado
      */
     public boolean remove(Integer element) {
-        // Implemente este método
-        //TODO
+        Node aux = header.next;
+        for(int i = 0; i < count; i++){
+            if(aux.element == element){
+                aux.prev.next = aux.next;
+                aux.next.prev = aux.prev;
+                count--;
+                return true;
+            }
+            aux = aux.next;
+        }
         return false;
     }
     
@@ -232,7 +240,7 @@ public class DoubleLinkedListOfInteger {
      * @param element elemento a ser contado
      * @return occ numero de ocorrencias na lista
      */
-    public int contaOcorrencias(int element){
+    public int contaOcorrencias(int element){ //O(n)
         int occ = 0;
         Node aux = header.next;
         for(int i = 0; i < count; i++){

@@ -62,5 +62,10 @@ public class App {
         System.out.println("Substitui elemento posicao 7 por 98. Elemento original: " + lista.set(7, 98));
         System.out.println("Substitui elemento posicao 4 por 3. Elemento original: " + lista.set(4, 3));
         System.out.println("Lista apos utilizar metodo set: \n" + lista);
+
+        System.out.println("Remove elemento 3: "+lista.remove(3));
+        System.out.println("Remove elemento 32: "+lista.remove(32));
+        System.out.println("Remove elemento 17: "+lista.remove(17));
+        System.out.println(lista);
     }
 }
