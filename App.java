@@ -7,11 +7,15 @@ public class App {
         lista.add(32);
         lista.add(43);
         lista.add(54);
-        //lista.add(65);
-        //lista.add(54);
+        lista.add(43);
+        lista.add(54);
+        lista.add(65);
+        lista.add(54);
         lista.add(65);
         lista.add(76);
-        lista.add(97);        
+        lista.add(76);
+        lista.add(97);
+        lista.add(54);        
         
         System.out.println("Conteudo da lista:\n"+lista);
         
@@ -34,15 +38,23 @@ public class App {
         System.out.println(s);
 
 
-        System.out.println(lista.contaOcorrencias(97));
-        System.out.println(lista.contaOcorrencias(54));
-        System.out.println(lista.contaOcorrencias(11));
+        System.out.println("Contagem ocorrencias (97): "+ lista.contaOcorrencias(97));
+        System.out.println("Contagem ocorrencias (54): "+ lista.contaOcorrencias(54));
+        System.out.println("Contagem ocorrencias (11): "+ lista.contaOcorrencias(11));
 
         System.out.println("Conteudo da lista:\n"+lista);
         lista.reverse();
         System.out.println("Conteudo da lista invertida:\n"+lista);
         lista.reverse();
-        System.out.println(lista.toString());
-        System.out.println(lista.toStringBackToFront());
+
+        System.out.println("Metodo toString():\n"+ lista.toString());
+        System.out.println("Metodo toStringBackToFront():\n"+ lista.toStringBackToFront());
+
+
+        System.out.println("Lista antes metodo unique:\n" + lista);
+        System.out.println("Tamanho da lista antes metodo unique: " + lista.size());
+        lista.unique();
+        System.out.println("Lista apos metodo unique:\n" + lista);
+        System.out.println("Tamanho da lista apos metodo unique: " + lista.size());
     }
 }

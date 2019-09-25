@@ -176,8 +176,24 @@ public class DoubleLinkedListOfInteger {
     }
 
     //Percorre lista e retira elementos repetidos
-    public void unique(){ //Caracterizacao O()
-        //TODO
+    public void unique(){ //Caracterizacao O(n^2)
+        Node aux_base = header.next; //nodo do elemento base
+        Node aux_comp; //nodo do elemento a ser comparado com o elemento base
+        while(aux_base.next != trailer){ //while necessario, pois muda dinamicamente o tamanho da lista
+            aux_comp = aux_base.next; //seta para nodo seguinte do base
+            while(aux_comp!=trailer){
+                if(aux_base.element==aux_comp.element){
+                    //remove elemento
+                    //nao chama metodo de remover, pois aumentaria caracterizacao O
+                    aux_comp.prev.next = aux_comp.next;
+                    aux_comp.next.prev = aux_comp.prev;
+                    count--;
+                }
+                aux_comp = aux_comp.next;
+            }
+            aux_base = aux_base.next;
+        }
+        
     }
 
     /**
