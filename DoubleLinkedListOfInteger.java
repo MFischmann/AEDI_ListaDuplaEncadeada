@@ -122,6 +122,7 @@ public class DoubleLinkedListOfInteger {
      */
     public void add(int index, Integer element) {
         // Implemente este método
+        //TODO
     }
     
     /**
@@ -131,6 +132,7 @@ public class DoubleLinkedListOfInteger {
      */
     public boolean remove(Integer element) {
         // Implemente este método
+        //TODO
         return false;
     }
     
@@ -143,9 +145,86 @@ public class DoubleLinkedListOfInteger {
     */
     public Integer set(int index, Integer element) {
         // Implemente este método
+        //TODO
         return 0;
     }
-    
+    //Retorna lista de tras para frente
+    public String toStringBackToFront(){ //Caracterizacao O(n)
+        String s = new String();
+        Node aux = trailer.prev;
+        for(int i = count-1; i >= 0; i--){
+            s = s+ aux.element +"\n";
+            aux = aux.prev;
+        }
+        return s;
+    }
+
+    //Inverte conteudo lista
+    public void reverse(){ //Caracterizacao O(n)
+        Node aux1 = header.next;
+        Node aux2 = trailer.prev;
+        int temp;
+
+        for(int i = 0; i < count/2; i++){
+            temp = aux1.element;
+            aux1.element = aux2.element;
+            aux2.element = temp;
+            aux1 = aux1.next;
+            aux2 = aux2.prev;
+        }
+
+    }
+
+    //Percorre lista e retira elementos repetidos
+    public void unique(){ //Caracterizacao O()
+        //TODO
+    }
+
+    /**
+     * Retorna um arranjo com os elementos da lista original entre fromIndex (inclusivo) e toIndex (exclusivo)
+     * @param fromIndex posicao inicial do elemento a ser copiado (inclusivo)
+     * @param toIndex posicao final do elemento a ser copiado (exclusivo)
+     * @throws IndexOutOfBoundsException se fromIndex ou toIndex nao validos    
+     * @return o arranjo com os elementos
+     */
+    public int[] subList(int fromIndex, int toIndex){
+        if(fromIndex < 0 || toIndex >= count){
+            throw new IndexOutOfBoundsException("Parametros fora dos limites da lista");
+        }
+
+        if(fromIndex >= toIndex){
+            throw new IndexOutOfBoundsException("toIndex deve ser maior do que fromIndex");
+        }
+        
+        int[] slst = new int[toIndex-fromIndex];
+
+        Node aux = getRefNode(fromIndex);
+        for(int i = 0; i < toIndex-fromIndex; i++){
+            slst[i] = aux.element;
+            aux = aux.next;
+        }
+        return slst;
+    }
+
+    /**
+     * Conta o numero de ocorrencias do elemento passado como parametro na lista
+     * @param element elemento a ser contado
+     * @return occ numero de ocorrencias na lista
+     */
+    public int contaOcorrencias(int element){
+        int occ = 0;
+        Node aux = header.next;
+        for(int i = 0; i < count; i++){
+            if(element == aux.element){
+                occ++;
+            }
+
+            aux = aux.next;
+        }
+
+        return occ;
+    }
+
     /**
      * Retorna true se a lista contem o elemento especificado
      * @param element o elemento a ser testado
